@@ -1,0 +1,37 @@
+.why-we {
+	height: 100vh;
+}
+
+.why-we .title {
+	text-align: center;
+	margin-bottom: 100px;
+}
+
+.why-we .shrink-box {
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	grid-template-columns: repeat(3, auto);
+	gap: 60px;
+
+	padding: 140px 100px;
+
+	background-color: rgba(25, 34, 46, 1);
+}
+
+.why-we .shrink-box .reason {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.why-we .shrink-box .reason .name {
+	font-weight: 600;
+	font-size: 24px;
+	color: #fff;
+}
+
+.why-we .shrink-box .reason .text {
+	font-weight: 300;
+	font-size: 22px;
+	color: #fff;
+}

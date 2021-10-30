@@ -1,0 +1,296 @@
+.welcome {
+	height: 100vh;
+}
+
+/* Navbar */
+.welcome .navbar-support {
+	height: 64px;
+}
+
+.welcome .navbar {
+	position: fixed;
+	top: 0;
+	left: 10%;
+	z-index: 998;
+
+	width: inherit;
+	height: 64px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar .logo {
+	color: #fff;
+	font-weight: bold;
+	font-size: 36px;
+
+	transition: color 0.6s ease-in-out;
+}
+
+.navbar .links {
+	display: flex;
+	gap: 30px;
+}
+
+.navbar .links .link {
+	list-style: none;
+
+	position: relative;
+
+	overflow: hidden;
+}
+
+.navbar .links .link:hover::after {
+	transform: translateX(0);
+}
+
+.navbar .links .link::after {
+	content: '';
+	display: block;
+
+	width: 100%;
+	height: 50%;
+
+	background-color: #ffda7c;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	transform: translateX(-100%);
+	transition: transform 0.4s ease-in-out;
+}
+
+.navbar .links .link a {
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+
+	text-decoration: none;
+
+	position: relative;
+	z-index: 1;
+
+	transition: color 0.6s ease-in-out;
+}
+
+/* Content */
+.welcome .welcome-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 30px;
+
+	height: calc(100vh - 64px);
+
+	position: relative;
+}
+
+.welcome-content .services {
+	display: flex;
+}
+
+.welcome-content .services .service {
+	list-style: none;
+
+	color: var(--text-color);
+	font-size: 14px;
+}
+
+.welcome-content .services .service:not(:last-child)::after {
+	content: '/';
+
+	margin: 10px;
+}
+
+.welcome-content .welcome-texts {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.welcome-content .welcome-texts .text {
+	height: 120px;
+
+	font-weight: 900;
+	font-size: 90px;
+	color: #fff;
+}
+
+.welcome-texts .text-loop {
+	display: flex;
+	flex-direction: column;
+
+	height: 120px;
+
+	overflow: hidden;
+
+	position: relative;
+}
+
+.welcome-texts .text-loop .text {
+	list-style: none;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.welcome-texts .text-loop .text:nth-child(1) {
+	animation: textLoopAnimationForText1 10s ease 2s infinite;
+}
+
+.welcome-texts .text-loop .text:nth-child(2) {
+	transform: translateY(100%);
+	animation: textLoopAnimationForText2 10s ease 2s infinite;
+}
+
+.welcome-texts .text-loop .text:nth-child(3) {
+	transform: translateY(200%);
+	animation: textLoopAnimationForText3 10s ease 2s infinite;
+}
+
+.welcome-texts .text-loop .text:nth-child(4) {
+	transform: translateY(-100%);
+	animation: textLoopAnimationForText4 10s ease 2s infinite;
+}
+
+@keyframes textLoopAnimationForText1 {
+	0%,
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	25% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	50% {
+		transform: translateY(200%);
+		opacity: 0;
+	}
+	75% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+}
+
+@keyframes textLoopAnimationForText2 {
+	0%,
+	100% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	25% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	75% {
+		transform: translateY(200%);
+		opacity: 0;
+	}
+}
+
+@keyframes textLoopAnimationForText3 {
+	0%,
+	100% {
+		transform: translateY(200%);
+		opacity: 0;
+	}
+	25% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	50% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	75% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+}
+
+@keyframes textLoopAnimationForText4 {
+	0%,
+	100% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	25% {
+		transform: translateY(200%);
+		opacity: 0;
+	}
+	50% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	75% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.send-request {
+	width: fit-content;
+
+	position: relative;
+
+	overflow: hidden;
+
+	text-decoration-color: var(--text-color);
+}
+
+.send-request:hover::after {
+	transform: translateX(0);
+}
+
+.send-request::after {
+	content: '';
+	display: block;
+
+	width: 100%;
+	height: 50%;
+
+	background-color: #ffda7c;
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	transform: translateX(-100%);
+	transition: transform 0.4s ease-in-out;
+}
+
+.send-request span {
+	color: var(--text-color);
+
+	font-weight: 600;
+	font-size: 14px;
+
+	position: relative;
+	z-index: 1;
+}
+
+.circle-text {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	animation: rotateInfinite 10s linear infinite;
+}
+
+@keyframes rotateInfinite {
+	0% {
+		transform: translateY(50%) rotate(360deg);
+	}
+	100% {
+		transform: translateY(50%) rotate(0);
+	}
+}

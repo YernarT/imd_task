@@ -1,0 +1,24 @@
+.introduce {
+	height: 100vh;
+
+	display: flex;
+	align-items: center;
+}
+
+.introduce .title,
+.introduce .desc {
+	flex-basis: 50%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.introduce .desc {
+	gap: 30px;
+}
+
+.introduce .desc p {
+	font-weight: 400;
+	font-size: 22px;
+	color: var(--text-color);
+}

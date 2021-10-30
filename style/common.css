@@ -1,0 +1,102 @@
+* {
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+
+	cursor: none;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.cursor {
+	width: 50px;
+	height: 50px;
+
+	border: 1px solid #000;
+	border-radius: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: fixed;
+	z-index: 1000;
+
+	pointer-events: none;
+	will-change: left, top;
+}
+
+.cursor .dot {
+	width: 0;
+	height: 0;
+
+	border: 1px solid #000;
+}
+
+/* variables */
+:root {
+	--text-color: rgba(27, 26, 30, 1);
+}
+
+body {
+	background-color: #fff;
+}
+
+.background-wall {
+	background: linear-gradient(
+		104.72deg,
+		#ffcf54 0%,
+		#d0d481 25.31%,
+		#ffda7c 51.87%,
+		#ffb37c 71.67%,
+		#7cffa0 90.94%
+	);
+	background-size: 400% 400%;
+
+	animation: bgcolorAnimation 15s ease infinite;
+
+	width: 100%;
+	height: 200vh;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	transition: opacity 0.6s ease-in-out;
+	will-change: opacity;
+}
+
+@keyframes bgcolorAnimation {
+	0%,
+	100% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+}
+
+/* shrink-box */
+.shrink-box {
+	border-radius: 48px;
+
+	width: 80%;
+	margin: 0 auto;
+
+	transition: width 0.4s ease-in-out;
+}
+.shrink-box--active {
+	width: 100%;
+}
+
+/* title */
+.title {
+	font-weight: 900;
+	font-size: 60px;
+	color: var(--text-color);
+}
